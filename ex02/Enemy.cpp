@@ -7,9 +7,11 @@ Enemy::Enemy(std::string name, int hp)
 }
 
 Enemy::~Enemy() {
-	cout << "- Entity " << m_name << endl;
+	cout << "- Enemy " << m_name << endl;
 }
 
 std::string Enemy::describe() const {
-	return( "Enemy " + m_name + " (" + "hp " + std::to_string(m_hp) + ")\n");
+	if (currentHp() > 0)
+		return( "Enemy " + m_name + " (" + std::to_string(currentHp()) + '/' + std::to_string(m_hp) + ")");
+	return ( "Enemy " + m_name + " (" + std::to_string(currentHp()) + '/' + std::to_string(m_hp) + ")" + "[dead]");
 }

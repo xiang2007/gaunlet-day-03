@@ -18,7 +18,7 @@ Player::~Player() {
 }
 
 std::string Player::describe() const {
-	return( "Player " + m_name);
+	return( "Player " + m_name + " (" + std::to_string(currentHp()) + '/' + std::to_string(maxHp()) + ", Armor " + std::to_string(m_armor) + ')');
 }
 
 void Player::takeDamage(int amount){
